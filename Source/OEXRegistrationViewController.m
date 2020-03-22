@@ -428,7 +428,18 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
             }
         }
         else if(![self shouldFilterField:controller.field]){
-            hasError = YES;
+            if([[controller field].name isEqualToString:@"country"]) {
+
+            } else if([[controller field].name isEqualToString:@"gender"]) {
+
+            } else if([[controller field].name isEqualToString:@"year_of_birth"]) {
+
+            } else if([[controller field].name isEqualToString:@"level_of_education"]) {
+
+            } else {
+                NSLog(@"This is the console output4: %@", [controller field].name);
+                hasError = YES;
+            }
         }
     }
 
@@ -438,6 +449,7 @@ NSString* const OEXExternalRegistrationWithExistingAccountNotification = @"OEXEx
         [self showInputErrorAlert];
         return;
     }
+    [parameters setObject:@"SA" forKey:@"country"];
     //Setting parameter 'honor_code'='true'
     [parameters setObject:@"true" forKey:@"honor_code"];
 

@@ -108,7 +108,7 @@ static OEXConfig* sSharedConfig;
 }
 
 - (NSString*)platformDestinationName {
-    return [self stringForKey:OEXPlatformDestinationName] ?: @"example.com";
+    return [self stringForKey:OEXPlatformDestinationName] ?: @"afdal.life";
 }
 
 - (NSString*)organizationCode {
